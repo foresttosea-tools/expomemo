@@ -87,7 +87,7 @@ GAS のコードを変更したときは「デプロイを管理 > 編集 > バ�
 ## ブランドの差し替え
 
 - 色：`css/brand.css` の色を変更
-- ロゴ：`icons/logo.svg` を差し替え
+- ロゴ：`icons/logo-mark.png`（ロゴマーク）と `icons/logo-horizontal.png`（横長ロゴ）を差し替え
 - アプリアイコン：`icons/icon-192.png`・`icon-512.png`・`icon-maskable-512.png`・`apple-touch-icon.png` を差し替え
 - 差し替えたら `sw.js` の `VERSION` を上げる
 

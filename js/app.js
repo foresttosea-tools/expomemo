@@ -286,7 +286,7 @@ function header(sub = '') {
     <header class="appbar">
       <div class="appbar-row">
         <button class="brand" data-action="goHome" aria-label="ホームへ">
-          <img src="icons/logo.svg" alt="" class="brand-mark" width="28" height="28">
+          <img src="icons/logo-mark.png" alt="" class="brand-mark" width="32" height="32">
           <span class="brand-name">ExpoMemo</span>
         </button>
         ${S.conn.staff ? `<button class="staff-chip" data-action="changeStaff">${esc(S.conn.staff)}</button>` : ''}
@@ -375,7 +375,7 @@ function viewSetup() {
   return `
   <main class="page narrow setup">
     <div class="setup-hero">
-      <img src="icons/logo.svg" alt="" width="64" height="64">
+      <img src="icons/logo-horizontal.png" alt="FORESTTOSEA" class="setup-logo" width="600" height="124">
       <h1>ExpoMemo</h1>
       <p>展示会のヒアリング・見積もり・名刺登録</p>
     </div>
@@ -509,7 +509,7 @@ function viewEstimate() {
   ${header(stepper('step1'))}
   <main class="page with-bottombar estimate">
     <section class="quote-head">
-      <p class="quote-kicker">${esc(s.companyName || '')}</p>
+      <img src="icons/logo-horizontal.png" alt="${esc(s.companyName || 'FORESTTOSEA')}" class="quote-logo" width="600" height="124">
       <h1>GEO-WAVE 概算お見積もり</h1>
       <button class="link small-link" data-action="skipEstimate">見積もりをスキップする</button>
     </section>
@@ -663,8 +663,8 @@ function totalsBar(r, isDetail, s) {
   const fmt = (v) => (isDetail ? formatYen(v) : formatRange(priceRange(v, s)));
   return `
   <div class="bar-totals" aria-live="polite">
-    <div><span>初期費用</span><b>${fmt(r.initialTotal)}</b></div>
-    <div><span>ランニング（年額）</span><b>${r.runningYearly > 0 ? fmt(r.runningYearly) : '—'}</b></div>
+    <div><span>初期</span><b>${fmt(r.initialTotal)}</b></div>
+    <div><span>年額</span><b>${r.runningYearly > 0 ? fmt(r.runningYearly) : '—'}</b></div>
   </div>`;
 }
 

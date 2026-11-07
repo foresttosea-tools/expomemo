@@ -1,10 +1,10 @@
 :root {
-  --bg: #f4f6f5;
+  --bg: #f3f6f7;
   --surface: #ffffff;
-  --text: #1c2421;
-  --muted: #5f6b67;
-  --line: #dde3e0;          /* 区切り線 */
-  --line-strong: #8f9c97;   /* 入力欄・押せる部品の枠線（明るい会場でも見えるように） */
+  --text: #1b2528;
+  --muted: #5a696e;
+  --line: #dae2e5;          /* 区切り線 */
+  --line-strong: #8b9ba0;   /* 入力欄・押せる部品の枠線（明るい会場でも見えるように） */
   --danger: #b3261e;
   --danger-soft: #fdecea;
   --warn-soft: #fff6e0;
@@ -39,7 +39,7 @@ img { max-width: 100%; }
 }
 .appbar-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .brand { display: flex; align-items: center; gap: 8px; background: none; border: 0; color: inherit; padding: 4px 0; cursor: pointer; }
-.brand-mark { border-radius: 8px; background: #fff; }
+.brand-mark { border-radius: 8px; background: #fff; padding: 3px; object-fit: contain; }
 .brand-name { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; }
 .appbar-meta { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .event { margin: 2px 0 0; font-size: 0.8rem; line-height: 1.4; opacity: 0.95; overflow-wrap: anywhere; }
@@ -122,7 +122,7 @@ textarea { resize: vertical; }
 input:focus, select:focus, textarea:focus { outline: 2px solid var(--brand); outline-offset: 0; border-color: var(--brand); }
 
 .setup-hero { text-align: center; padding: 24px 0 8px; }
-.setup-hero img { border-radius: 16px; background: #fff; box-shadow: var(--shadow); }
+.setup-hero .setup-logo { display: block; width: min(280px, 80%); height: auto; margin: 0 auto 12px; }
 .setup-hero h1 { margin: 8px 0 0; color: var(--brand); }
 .setup-hero p { margin: 0; color: var(--muted); }
 
@@ -154,10 +154,10 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--brand); out
 
 /* ---------------------------------------------------------- 見積もり */
 .quote-head { text-align: center; padding: 8px 0 4px; }
-.quote-kicker { margin: 0; color: var(--muted); font-size: 0.8rem; }
+.quote-logo { display: block; width: auto; height: 40px; max-width: 80%; margin: 4px auto 8px; object-fit: contain; }
 .quote-head h1 { margin: 2px 0 0; font-size: 1.35rem; color: var(--brand-strong); }
 
-.segmented { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: #e7ecea; border-radius: 12px; padding: 4px; gap: 4px; margin: 12px 0; }
+.segmented { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; background: #e6ecee; border-radius: 12px; padding: 4px; gap: 4px; margin: 12px 0; }
 .segmented button { min-height: 42px; border: 0; border-radius: 9px; background: transparent; color: var(--muted); font-weight: 600; cursor: pointer; }
 .segmented button.on { background: var(--surface); color: var(--brand-strong); box-shadow: var(--shadow); }
 .segmented.small { margin: 0; padding: 3px; }
@@ -207,10 +207,10 @@ table.lines tr.sub td { background: var(--brand-soft); color: var(--brand-strong
 .capture-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .btn { white-space: nowrap; }
 .capture-actions .btn { cursor: pointer; }
-.card-preview { display: block; width: 100%; max-height: 260px; object-fit: contain; border-radius: var(--radius-sm); background: #eef1f0; margin-bottom: 10px; }
+.card-preview { display: block; width: 100%; max-height: 260px; object-fit: contain; border-radius: var(--radius-sm); background: #edf2f3; margin-bottom: 10px; }
 .ocr-status { display: flex; align-items: center; gap: 8px; color: var(--brand-strong); font-weight: 600; }
 .ocr-lines { display: flex; flex-direction: column; gap: 6px; }
-.ocr-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px dashed var(--line); background: #fafbfb; cursor: pointer; font-size: 0.9rem; }
+.ocr-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px dashed var(--line); background: #f9fbfb; cursor: pointer; font-size: 0.9rem; }
 .ocr-line span { min-width: 0; overflow-wrap: anywhere; }
 .ocr-line em { flex: none; font-style: normal; font-size: 0.7rem; font-weight: 700; color: var(--brand-strong); background: var(--brand-soft); border-radius: 999px; padding: 2px 8px; }
 .ocr-line.assigned { border-style: solid; background: var(--surface); }
@@ -251,7 +251,7 @@ table.lines tr.sub td { background: var(--brand-soft); color: var(--brand-strong
 
 .toast {
   position: fixed; left: 50%; bottom: calc(96px + var(--safe-bottom)); transform: translate(-50%, 20px);
-  background: #26302d; color: #fff; padding: 10px 16px; border-radius: 12px; font-size: 0.9rem;
+  background: #24303a; color: #fff; padding: 10px 16px; border-radius: 12px; font-size: 0.9rem;
   opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 60; width: max-content; max-width: calc(100vw - 32px);
 }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
@@ -308,7 +308,7 @@ fieldset.address legend { font-size: 0.85rem; font-weight: 600; color: var(--mut
 
 table.lines tr.breakdown td { padding: 0 4px 6px; border-bottom: 1px solid var(--line); }
 table.lines tr.breakdown details summary { cursor: pointer; color: var(--accent); font-size: 0.75rem; }
-table.lines tr.breakdown dl { margin: 4px 0 0; padding: 6px 8px; background: #f6f8f7; border-radius: 8px; }
+table.lines tr.breakdown dl { margin: 4px 0 0; padding: 6px 8px; background: #f5f8f9; border-radius: 8px; }
 table.lines tr.breakdown dl div { display: flex; justify-content: space-between; gap: 8px; padding: 2px 0; }
 table.lines tr.breakdown dt small { display: block; color: var(--muted); font-size: 0.7rem; }
 table.lines tr.breakdown dd { margin: 0; white-space: nowrap; }
@@ -354,7 +354,7 @@ input[type=text], input[type=email], input[type=tel], input[type=url], input[typ
 /* 見積もり：下のバーに合計を常に表示 */
 .bar-totals { flex: 1; min-width: 0; display: grid; gap: 0; line-height: 1.3; }
 .bar-totals div { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
-.bar-totals span { flex: none; font-size: 0.7rem; color: var(--muted); }
+.bar-totals span { flex: none; width: 2.2em; font-size: 0.72rem; color: var(--muted); }
 .bar-totals b { font-size: 0.95rem; color: var(--brand-strong); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bar-totals div:first-child b { font-size: 1.05rem; }
 .bar-totals.empty { font-size: 0.8rem; color: var(--muted); align-self: center; }
