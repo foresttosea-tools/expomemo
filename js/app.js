@@ -80,6 +80,15 @@ const S = {
   lastRefresh: 0,
 };
 if (!S.conn.gasUrl) S.conn.gasUrl = GAS_URL;
+// お試しモードで使っていた端末は、本番の接続先が設定されたら自動で切り替える（パスワードは入れ直し）
+if (S.conn.gasUrl === 'mock' && GAS_URL !== 'mock') {
+  S.conn = { ...S.conn, gasUrl: GAS_URL, token: '', staff: '' };
+  S.config = null;
+  S.draft = null;
+  S.pending = [];
+  for (const k of [LS.config, LS.draft, LS.pending]) store.del(k);
+  store.set(LS.conn, S.conn);
+}
 
 const saveConn = () => store.set(LS.conn, S.conn);
 const saveDraft = () => (S.draft ? store.set(LS.draft, S.draft) : store.del(LS.draft));
