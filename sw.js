@@ -1,7 +1,7 @@
 // アプリ本体のファイルをキャッシュして、起動を速くする。
 // データ（GAS との通信）はキャッシュしない。
 // ファイルを更新したら VERSION を上げると、利用者の端末にも新しい版が届く。
-const VERSION = 'expomemo-v8';
+const VERSION = 'expomemo-v9';
 const SHELL = [
   './',
   './index.html',

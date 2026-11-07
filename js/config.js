@@ -1,4 +1,4 @@
-// GAS をウェブアプリとしてデプロイしたら、その URL（https://script.google.com/macros/s/.../exec）をここに書く。
-// "mock" のままだと、GAS なしで画面を試せるお試しモードになる（合言葉は demo）。
-// URL は公開されても問題ない（合言葉がないと何も返さない）。
-export const GAS_URL = 'mock';
+// GAS をウェブアプリとしてデプロイしたときの URL（https://script.google.com/macros/s/.../exec）。
+// "mock" にすると、GAS なしで画面を試せるお試しモードになる（パスワードは demo、管理者は admin）。
+// URL は公開されても問題ない（パスワードがないと何も返さない）。
+export const GAS_URL = 'https://script.google.com/macros/s/AKfycbybMOio-BRSXrB6NL3nYc1x-V15JOFMvhdDudPP70Oc-HUkeBX0aTE-qINww9ktkPGZ/exec';
